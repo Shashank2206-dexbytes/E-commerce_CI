@@ -15,7 +15,6 @@ class Category extends CI_Controller {
         $this->index();
         if ($this->input->server('REQUEST_METHOD') == 'POST')
          {
-        
             $selectcategory = array(
                 'name' => $this->input->post('category_name'),
                 'description' => $this->input->post('category_description'),
@@ -47,7 +46,7 @@ class Category extends CI_Controller {
     public function deactiv_status_user($id)
     {
         $this->load->model('CategoryModel');
-		$getstatus=$this->CategoryModel->deactive($id);
+		$result=$this->CategoryModel->deactive($id);
         
         if ($result == 1)
         {
@@ -83,7 +82,6 @@ class Category extends CI_Controller {
                 } 
                 else 
                 {
-                
                     $categoryData = array(
                         'name' => $this->input->post('category_name'),
                         'description' => $this->input->post('category_description'),
@@ -125,7 +123,6 @@ class Category extends CI_Controller {
     public function editcategory($id)
     {
         $this->load->model('CategoryModel');
-    
         if ($this->input->post()) {
             $formArray = array(
                 'name' => $this->input->post('category_name'),
@@ -152,7 +149,6 @@ class Category extends CI_Controller {
                 $this->session->set_flashdata('success', 'Record Update Successfully');
                 redirect(base_url().'category');
             }
-
         } 
         else 
         {

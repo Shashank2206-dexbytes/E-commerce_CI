@@ -1,5 +1,4 @@
 <?php include "template/header.php" ?>
-
 <div id="main-wrapper">
 <?php include 'template/navbar.php' ?>
 <?php include "template/sidebar.php" ?>
