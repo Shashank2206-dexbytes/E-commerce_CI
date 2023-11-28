@@ -27,48 +27,8 @@ class Product extends CI_Controller {
                 'category_id'=>$this->input->post('category_id'),
             );
 
-            // $this->CategoryModel->addcategory($selectcategory);
-            // $this->session->set_flashdata('success', 'Product added successfully');
-        }
-    }
-
-    public function active_status_user($product_id)
-    {
-        $data['status'] = 0 ;
-        $this->db->where('product_id', $product_id);
-        $result = $this->db->update('product',$product_id);
-        if ($result == 1) 
-        {
-            $this->session->set_flashdata('success', "Status has been change successfully");
-            $this->session->set_flashdata('success', 'Status has been change successfully');
-        }
-        else 
-        {
-            $this->session->set_flashdata('danger', 'Status not update successfully');
-            $this->session->set_flashdata('danger', 'Status not update successfully');  
-        }
-        redirect('product'); 
-    }
           
-          
-          
-    public function deactiv_status_user($product_id)
-    {
-        $data['status'] = 1 ;
-        $this->db->where('product_id',$product_id);
-        $result = $this->db->update('product',$product_id);
-        if ($result == 1)
-        {
-            $this->session->set_flashdata('success', "Status has been change successfully");
-            $this->session->set_flashdata('success', 'Status has been change successfully');
         }
-        else 
-        {
-            $this->session->set_flashdata('danger', 'Status not update successfully');
-            $this->session->set_flashdata('danger', 'Status not update successfully');
-        }
-        redirect('product');
-                    
     }
 
     public function add_product()

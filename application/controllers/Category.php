@@ -9,7 +9,7 @@ class Category extends CI_Controller {
 		$getcategory['category']=$this->CategoryModel->selectcategory();
 		$this->load->view('category',$getcategory);
 	}
-// =====================================================================================================
+
 	public function selectcategory()
     {
         $this->index();
@@ -24,7 +24,7 @@ class Category extends CI_Controller {
             );
         }
     }
-    // ===============================================================================
+
     public function active_status_user($id)
     {
         $this->load->model('CategoryModel');
@@ -43,7 +43,7 @@ class Category extends CI_Controller {
     }
           
           
-//    ============================================================================================       
+    
     public function deactiv_status_user($id)
     {
         $this->load->model('CategoryModel');
@@ -62,7 +62,7 @@ class Category extends CI_Controller {
             redirect('category');
                     
     }
-// =============================================================================================
+
     public function addcategory()
     {
         $this->load->model('CategoryModel');
@@ -121,7 +121,7 @@ class Category extends CI_Controller {
     
         
     
-//   ==================================================================================================  
+
     public function editcategory($id)
     {
         $this->load->model('CategoryModel');
@@ -166,6 +166,6 @@ class Category extends CI_Controller {
 		
     
 }
-//  ============================================================================================   
+
 
 ?>
