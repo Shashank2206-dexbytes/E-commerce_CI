@@ -9,7 +9,7 @@ class Category extends CI_Controller {
 		$getcategory['category']=$this->CategoryModel->selectcategory();
 		$this->load->view('category',$getcategory);
 	}
-
+// =====================================================================================================
 	public function selectcategory()
     {
         $this->index();
@@ -17,22 +17,18 @@ class Category extends CI_Controller {
          {
         
             $selectcategory = array(
-                'name' => $this->input->strip_tags(post('category_name')),
+                'name' => $this->input->post('category_name'),
                 'description' => $this->input->post('category_description'),
                 'image'=>$this->input->post('category_image'),
                 'parent_category'=>$this->input->post('parent_category'),
             );
-
-            $this->CategoryModel->addcategory($selectcategory);
-            $this->session->set_flashdata('success', 'Product added successfully');
         }
     }
-        
+    // ===============================================================================
     public function active_status_user($id)
     {
-        $data['status'] = 0 ;
-        $this->db->where('id', $id);
-        $result = $this->db->update('category',$data);
+        $this->load->model('CategoryModel');
+		$result=$this->CategoryModel->active($id);
         if ($result == 1) 
         {
             $this->session->set_flashdata('success', "Status has been change successfully");
@@ -47,12 +43,12 @@ class Category extends CI_Controller {
     }
           
           
-          
+//    ============================================================================================       
     public function deactiv_status_user($id)
     {
-        $data['status'] = 1 ;
-        $this->db->where('id',$id);
-        $result = $this->db->update('category',$data);
+        $this->load->model('CategoryModel');
+		$getstatus=$this->CategoryModel->deactive($id);
+        
         if ($result == 1)
         {
             $this->session->set_flashdata('success', "Status has been change successfully");
@@ -66,7 +62,7 @@ class Category extends CI_Controller {
             redirect('category');
                     
     }
-
+// =============================================================================================
     public function addcategory()
     {
         $this->load->model('CategoryModel');
@@ -125,7 +121,7 @@ class Category extends CI_Controller {
     
         
     
-    
+//   ==================================================================================================  
     public function editcategory($id)
     {
         $this->load->model('CategoryModel');
@@ -170,6 +166,6 @@ class Category extends CI_Controller {
 		
     
 }
-    
+//  ============================================================================================   
 
 ?>

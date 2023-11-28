@@ -11,7 +11,7 @@
         $query = $this->db->get();
         return $query->result_array();
     }
-    
+    // =====================================================================================================
     /**
      * Add the Category
      */
@@ -19,6 +19,7 @@
         $this->db->insert('category', $data);
     }   
 
+    // =====================================================================================================
     /**
      * Save the data in the edit feild 
      */
@@ -31,7 +32,7 @@
 
         return $row;
     }
-
+// =====================================================================================================
     /**
      * Update the Category
      */
@@ -40,7 +41,7 @@
         $this->db->where('id',$id);
         $this->db->update('category',$fromArray);
     }
-
+// =====================================================================================================
 
     /**
      * Update the Category with same image
@@ -50,7 +51,7 @@
         $this->db->where('id',$id);
         $this->db->update('category',$formArraynotimage);
     }
-
+// =====================================================================================================
     /**
      * check the duplicate entry
      */
@@ -61,8 +62,30 @@
         $duplicateData = $this->db->get('category');
         return $duplicateData->row_array();
     }
-
-    
+// =====================================================================================================
+    /**
+     * check the status is active
+     */
+    public function active($id)
+    {
+        $data['status'] = 0 ;
+        $this->db->where('id', $id);
+        $result = $this->db->update('category',$data);
+        return $result;
+    }
+// =====================================================================================================
+     /**
+     * check the status is deactive
+     */
+          
+    public function deactive($id)
+    {
+        $data['status'] = 1 ;
+        $this->db->where('id',$id);
+        $result = $this->db->update('category',$data);
+        return $result;
+                    
+    }
 
     
  }

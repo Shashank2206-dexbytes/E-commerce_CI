@@ -17,8 +17,9 @@
 <link href="/Ecommerce_ci/Assets/plugins/tables/css/datatable/dataTables.bootstrap4.min.css" rel="stylesheet">
 <link href="/Ecommerce_ci/Assets/plugins/sweetalert/css/sweetalert.css" rel="stylesheet">
 <link href="/Ecommerce_ci/Assets/css/style.css" rel="stylesheet">
-<link href="/Ecommerce_ci/Assets/css/product.css" rel="stylesheet">
+
 <link href="/Ecommerce_ci/Assets/css/lightslider.css" rel="stylesheet">
+
 
 
 
@@ -54,6 +55,7 @@
     <link href="/Modern_Ecommerce_website/View/css/style.css" rel="stylesheet">
     <link href="/Modern_Ecommerce_website/View/css/category.css" rel="stylesheet">
     <link href="/Ecommerce_ci/Assets/plugins/toastr/css/toastr.min.css" rel="stylesheet">
+    <link href="/Ecommerce_ci/Assets/css/product.css" rel="stylesheet">
 </head>
 <body>
     
